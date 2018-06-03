@@ -2,8 +2,7 @@ require_relative 'config/environment'
 
 class App < Sinatra::Base
   get '/' do
-    session["item"] = item
-    @session = session
+
     erb :index
   end
 
@@ -14,7 +13,8 @@ class App < Sinatra::Base
 
   post '/checkout' do
     @item = Session.new(params[:item])
-
+    session["item"] = item
+    @session = session
     erb :checkout
   end
 
