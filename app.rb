@@ -2,6 +2,7 @@ require_relative 'config/environment'
 
 class App < Sinatra::Base
   get '/' do
+    session["item"] = item
     @session = session
     erb :index
   end
