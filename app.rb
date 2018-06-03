@@ -12,7 +12,7 @@ class App < Sinatra::Base
   end
 
   post '/checkout' do
-    binding.pry
+    #binding.pry
     @session = session
     session["item"] = "secret"
     erb :checkout
