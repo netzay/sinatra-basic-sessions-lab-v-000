@@ -13,7 +13,7 @@ class App < Sinatra::Base
 
   post '/checkout' do
     binding.pry
-    session["item"] = "item"
+    session["item"] = @session
     @session = session
 
     erb :checkout
