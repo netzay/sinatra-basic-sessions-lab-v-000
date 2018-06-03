@@ -5,6 +5,10 @@ class App < Sinatra::Base
     erb :index
   end
 
+  post '/checkout' do
+    @item = Item.new(params[:item])
 
+    erb :checkout
+  end
 
 end
