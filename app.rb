@@ -5,6 +5,11 @@ class App < Sinatra::Base
     erb :index
   end
 
+  configure do 
+    enable :Sessions
+    set :session_secret, "secret"
+  end
+
   post '/checkout' do
     @item = Item.new(params[:item])
 
